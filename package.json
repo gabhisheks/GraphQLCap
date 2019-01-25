@@ -1,0 +1,43 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "8.12.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "npm i && gulp",
+    "env": "npm i && gulp env",
+    "inspect": "node --inspect app.js",
+    "lint": "eslint ."
+  },
+  "author": "PRDXN",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "cron": "^1.2.1",
+    "dotenv": "^6.2.0",
+    "eslint": "^3.18.0",
+    "express": "4.14.1",
+    "express-graphql": "0.7.1",
+    "graphql": "14.1.1",
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11",
+    "helmet": "^3.5.0",
+    "mongo-morgan-ext": "github:reedyuk/mongo-morgan-ext",
+    "mongodb": "3.1.13",
+    "mongoose": "5.4.6",
+    "mongoose-encryption": "^1.5.0",
+    "morgan": "^1.8.1",
+    "nodemailer": "^4.4.1",
+    "pm2": "^2.4.2",
+    "querystring": "^0.2.0",
+    "response-time": "^2.3.2",
+    "run-sequence": "^1.2.2",
+    "shortid": "^2.2.8",
+    "superagent": "^3.8.0"
+  }
+}
