@@ -21,7 +21,6 @@ app.use(helmet());
 
 //Best practices app settings
 app.set('title', 'capzone');
-app.set('query parser', `extended`);
 
 const clientUrl = process.env.CLIENT_URL || config.client;
 app.use(function (req, res, next) {
