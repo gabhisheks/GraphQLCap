@@ -1,4 +1,4 @@
 
 exports.default = {
-  'userController': require('./../controllers/userController')
+  'userProjectController': require('./../controllers/userProjectController')
 };

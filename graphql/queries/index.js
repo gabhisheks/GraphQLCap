@@ -1,4 +1,4 @@
-let userQuery = require('./userQuery').default;
+let userQuery = require('./userProjectQueries').default;
 
 exports.default = {
   ...userQuery

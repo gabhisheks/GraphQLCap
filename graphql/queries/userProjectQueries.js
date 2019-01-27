@@ -1,7 +1,7 @@
 const dependencies = require('../../src/routes/routesDependencies').default;
 let {
-  userAllDetail,
-} = require('../types/user');
+  projectMailStatus,
+} = require('../types/userProject');
 let {
   GraphQLList,
   GraphQLString,
@@ -14,7 +14,7 @@ let allUser,
 
 
 allUser = {
-  'type': new GraphQLList(userAllDetail),
+  'type': new GraphQLList(projectMailStatus),
   resolve() {
     const users = dependencies.userController.allUser();
     if (!users) {
@@ -25,7 +25,7 @@ allUser = {
 };
 
 userByName = {
-  'type': new GraphQLList(userAllDetail),
+  'type': new GraphQLList(projectMailStatus),
   'args': {
     'name': {
       'name': 'user name',
@@ -42,7 +42,7 @@ userByName = {
 };
 
 userById = {
-  'type': new GraphQLList(userAllDetail),
+  'type': new GraphQLList(projectMailStatus),
   'args': {
     'id': {
       'name': 'ID',

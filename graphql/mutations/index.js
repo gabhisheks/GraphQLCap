@@ -1,4 +1,4 @@
-const userMutation = require('./userMutation').default;
+const userMutation = require('./userProjectMutations').default;
 
 exports.default = {
   ...userMutation,

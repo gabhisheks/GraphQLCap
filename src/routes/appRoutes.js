@@ -5,7 +5,7 @@ const schema = require('../../graphql').default;
 
 /**
  * All APP API's would be listed below */
-router.use('/graphql', graphqlHTTP(() => ({
+router.use('/capzone', graphqlHTTP(() => ({
   'schema': schema,
   'graphiql': true,
   'pretty': true

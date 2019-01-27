@@ -23,8 +23,6 @@ app.use(helmet());
 app.set('title', 'capzone');
 app.set('query parser', `extended`);
 
-let verifyToken = require('./src/helpers/token').verifyToken;
-
 const clientUrl = process.env.CLIENT_URL || config.client;
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", clientUrl);
@@ -37,18 +35,15 @@ app.use(function (req, res, next) {
   }
 });
 
-// Verifying JWT Token
-//app.use(verifyToken);
-
 // serve static files
 app.use(express.static('public'));
 
 //App activity logging
 app.use(morgan(':method :url :date :remote-addr :status :response-time'));
 app.use(logger(config.db.url+config.db.name,"logs"));
+
 //Parses requests
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({ 'extended': true }));
 
 //Using the compression middleware
