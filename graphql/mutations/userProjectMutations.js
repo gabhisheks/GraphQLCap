@@ -9,8 +9,8 @@ const {
 let userProjectMailStatus = {
   'type': projectMailStatus,
   'args': {
-    'userId': {
-      'name': 'mail id',
+    'Email': {
+      'name': 'Email',
       'type': GraphQLString
     },
     'btnValue': {
@@ -19,7 +19,7 @@ let userProjectMailStatus = {
     }
   },
   async resolve(root, params) {
-    if (!params.userId || !params.btnValue) {
+    if (!params.Email || !params.btnValue) {
       throw new Error('Error => args is incorrect.');
     }
 

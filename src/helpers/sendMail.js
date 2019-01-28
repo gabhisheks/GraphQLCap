@@ -16,7 +16,7 @@ exports.sendNewProjectMail = (recipient, tokenToSend, uidToSend, pidToSend) => {
     "to": recipient,
     "subject": `Magic Link Testing :)`,
     "text": 'Hello! ' + recipient + '\n',
-    "html": '<p>You can now access your account here: <a href="' + host + '?ptoken=' + tokenToSend + '&uid=' + uidToSend + '&pid=' + pidToSend + '">link</a> to submit new project.</p>'
+    "html": '<p>You can now access your account here: <a href="' + host + '?ptoken=' + tokenToSend + '&uid=' + uidToSend + '&pid=' + pidToSend + '">Visit Website</a> to submit new project.</p>'
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
@@ -26,8 +26,7 @@ exports.sendNewProjectMail = (recipient, tokenToSend, uidToSend, pidToSend) => {
     }
   });
   return {
-    'userId': recipient,
+    'Email': recipient,
     'status': 'Email successfully sent!'
   };
 };
-

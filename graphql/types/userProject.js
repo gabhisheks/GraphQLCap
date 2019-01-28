@@ -13,7 +13,7 @@ exports.projectMailStatus = new GraphQLObjectType({
     '_id': {
       'type': new GraphQLNonNull(GraphQLID)
     },
-    'userId': {
+    'Email': {
       'type': GraphQLString
     },
     'status': {

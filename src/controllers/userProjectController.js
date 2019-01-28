@@ -10,18 +10,18 @@ const {
 
 exports.userProjectMail = async (params) => {
   let {
-    userId,
+    Email,
     btnValue
   } = params;
 
-  if (checkIfDataExists(userId) && checkIfDataExists(btnValue) && btnValue === 'new') {
+  if (checkIfDataExists(Email) && checkIfDataExists(btnValue) && btnValue === 'new') {
     // get userObj from database.
-    userId = userId.trim();
+    Email = Email.trim();
     let userData = await mongoose.model('user').findOneAndUpdate({
-      'userId': userId
+      'Email': Email
     }, {
       '$set': {
-        'userId': userId,
+        'Email': Email,
       }
     }, {
       'upsert': true,
@@ -39,7 +39,7 @@ exports.userProjectMail = async (params) => {
     }).save();
 
     if (checkIfDataExists(newProjectData) && checkIfDataExists(userData)) {
-      // get projectToken, proejctId & userId.
+      // get projectToken, proejctId & Email.
       let ProjectRelation = mongoose.model('projectrelation');
       let result = await new ProjectRelation({
         'ownerId': userData._id,
@@ -49,18 +49,18 @@ exports.userProjectMail = async (params) => {
 
       if (checkIfDataExists(result)) {
         console.log(`Inserted Successfully projectRelation data => ${result}`);
-        // sent mail to userId.
-        return sendNewProjectMail(userId, result.token, userData._id, newProjectData._id);
+        // sent mail to Email.
+        return sendNewProjectMail(Email, result.token, userData._id, newProjectData._id);
       }
     }
-  } else if (checkIfDataExists(userId) && checkIfDataExists(btnValue) && btnValue === 'update') {
+  } else if (checkIfDataExists(Email) && checkIfDataExists(btnValue) && btnValue === 'update') {
     return {
-      'userId': userId,
+      'Email': Email,
       'status': 'prdxn is working on it.'
     };
   } else {
     return {
-      'userId': userId,
+      'Email': Email,
       'status': 'Oops! somthing went wrong.'
     };
   }

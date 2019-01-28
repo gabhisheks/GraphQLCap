@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-	'userId': {
+	'Email': {
 		'type': String,
 	},
 }, {
@@ -14,5 +14,5 @@ exports.default = mongoose.model('user', userSchema);
 mongoose.model('user')
 	.collection
 	.createIndex({
-		'userId': 1
+		'Email': 1
 	});
